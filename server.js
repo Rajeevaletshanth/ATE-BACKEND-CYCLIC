@@ -90,9 +90,11 @@ app.get('/superadmin/validate', adminAuthenticateToken, (req, res) => {
 const adminRoute = require('./routes/adminRoute');
 const superadminRoute = require('./routes/superadminRoute');
 const uploadRoute = require('./routes/uploadRoute');
+const cuisinesRoute = require('./routes/cuisinesRoute');
 
 app.use('/admin', adminRoute);
 app.use('/superadmin', superadminRoute);
+app.use('/cuisines', cuisinesRoute);
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
