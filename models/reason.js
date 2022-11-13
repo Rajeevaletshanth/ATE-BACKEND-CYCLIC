@@ -1,0 +1,41 @@
+const Sequelize = require('sequelize');
+const database = require('../db_connect');
+
+
+const Reason = database.define('reason', {
+
+    id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+
+    reason: {
+        type: Sequelize.STRING,
+    },
+
+    extra_note: {
+        type: Sequelize.STRING,
+    },
+
+    is_deleted: {
+        type: Sequelize.BOOLEAN
+    },
+
+    createdAt: {
+        type: Sequelize.DATE,
+        field: 'created_at'
+    },
+
+    updatedAt: {
+        type: Sequelize.DATE,
+        field: 'updated_at'
+    }
+}, {
+    // options
+    freezeTableName: true
+});
+
+// Admin.sync({ force: true })
+
+module.exports = Reason;

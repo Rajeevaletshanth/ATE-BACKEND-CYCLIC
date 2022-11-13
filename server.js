@@ -91,10 +91,14 @@ const adminRoute = require('./routes/adminRoute');
 const superadminRoute = require('./routes/superadminRoute');
 const uploadRoute = require('./routes/uploadRoute');
 const cuisinesRoute = require('./routes/cuisinesRoute');
+const currencyRoute = require('./routes/currencyRoute');
+const deliveryPeople = require('./routes/deliveryPeopleRoute');
 
 app.use('/admin', adminRoute);
 app.use('/superadmin', superadminRoute);
 app.use('/cuisines', cuisinesRoute);
+app.use('/currency', currencyRoute);
+app.use('/deliveryPeople', deliveryPeople);
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
