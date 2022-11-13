@@ -95,9 +95,9 @@ module.exports = {
                 }
             })
             if(currency[0] > 0)
-                res.send({"response": "success", "message" : "Successfully updated."})
+                res.send({"response": "success", "message" : "Successfully updated."});
             else
-                res.send({"response" : "error", "message" : "Sorry, failed to update!"})
+                res.send({"response" : "error", "message" : "Sorry, failed to update!"});
         } catch(error) {
             res.send({"response" : "error", "message" : "Sorry, User is deleted or suspended!"})                     
         }         
