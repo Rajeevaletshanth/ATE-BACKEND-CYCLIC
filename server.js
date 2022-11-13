@@ -96,6 +96,7 @@ const deliveryPeople = require('./routes/deliveryPeopleRoute');
 const notice = require('./routes/noticeRoute');
 const noticePushNotification = require('./routes/noticePushNotificationRoute');
 const promocodes = require('./routes/promocodeRoute');
+const reason = require('./routes/reasonRoute');
 
 app.use('/admin', adminRoute);
 app.use('/superadmin', superadminRoute);
@@ -105,6 +106,7 @@ app.use('/deliveryPeople', deliveryPeople);
 app.use('/notice', notice);
 app.use('/noticePushNotification', noticePushNotification);
 app.use('/promocodes', promocodes);
+app.use('/reason', reason);
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
