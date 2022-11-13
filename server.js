@@ -97,6 +97,7 @@ const notice = require('./routes/noticeRoute');
 const noticePushNotification = require('./routes/noticePushNotificationRoute');
 const promocodes = require('./routes/promocodeRoute');
 const reasons = require('./routes/reasonRoute');
+const restaurantsType = require('./routes/restaurantsTypeRoute');
 
 app.use('/admin', adminRoute);
 app.use('/superadmin', superadminRoute);
@@ -107,6 +108,7 @@ app.use('/notice', notice);
 app.use('/noticePushNotification', noticePushNotification);
 app.use('/promocodes', promocodes);
 app.use('/reason', reasons);
+app.use('/restaurantsType', restaurantsType);
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
