@@ -94,6 +94,7 @@ const cuisinesRoute = require('./routes/cuisinesRoute');
 const currencyRoute = require('./routes/currencyRoute');
 const deliveryPeople = require('./routes/deliveryPeopleRoute');
 const notice = require('./routes/noticeRoute');
+const noticePushNotification = require('./routes/noticePushNotificationRoute');
 
 app.use('/admin', adminRoute);
 app.use('/superadmin', superadminRoute);
@@ -101,6 +102,7 @@ app.use('/cuisines', cuisinesRoute);
 app.use('/currency', currencyRoute);
 app.use('/deliveryPeople', deliveryPeople);
 app.use('/notice', notice);
+app.use('/noticePushNotification', noticePushNotification);
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
