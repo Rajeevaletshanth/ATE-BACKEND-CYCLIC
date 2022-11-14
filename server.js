@@ -15,7 +15,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 
-const {authenticateToken, adminAuthenticateToken} = require("./auth/authentication")
+const { authenticateToken, adminAuthenticateToken } = require("./auth/authentication")
 
 require('dotenv').config()
 
@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({
 app.use(compression());
 app.use(helmet());
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     //disabling cache
     res.setHeader('Surrogate-Control', 'no-store')
     res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
@@ -78,12 +78,12 @@ app.use(requestIp.mw())
 //Welcome Route
 app.get('/validate', authenticateToken, (req, res) => {
     // res.json(req.user)
-    res.send({"message" : "Welcome to Real Estate Tokenization Engine...", "authenticate" : true})
+    res.send({ "message": "Welcome to Real Estate Tokenization Engine...", "authenticate": true })
 })
 
 app.get('/superadmin/validate', adminAuthenticateToken, (req, res) => {
     // res.json(req.user)
-    res.send({"message" : "Welcome to Real Estate Tokenizationg Engine...", "authenticate" : true})
+    res.send({ "message": "Welcome to Real Estate Tokenizationg Engine...", "authenticate": true })
 })
 
 //Routes
@@ -100,6 +100,7 @@ const reasons = require('./routes/reasonRoute');
 const restaurantsType = require('./routes/restaurantsTypeRoute');
 const settings = require('./routes/settingsRoute');
 const addons = require('./routes/addonsRoute');
+const category = require('./routes/categoryRoute');
 
 app.use('/admin', adminRoute);
 app.use('/superadmin', superadminRoute);
@@ -113,20 +114,22 @@ app.use('/reason', reasons);
 app.use('/restaurantsType', restaurantsType);
 app.use('/settings', settings);
 app.use('/addons', addons);
+app.use('/category', category);
+
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
 
 app.get('/download/:filename', authenticateToken, (req, res) => {
-    const  {filename}  = req.params;
-    var file = __dirname + '/public/uploads/' +  filename;
+    const { filename } = req.params;
+    var file = __dirname + '/public/uploads/' + filename;
     console.log(file)
     res.download(file);
 })
 
 app.get('/getAvatar/:filename', (req, res) => {
-    const  {filename}  = req.params;
-    var file = __dirname + '/public/uploads/' +  filename;
+    const { filename } = req.params;
+    var file = __dirname + '/public/uploads/' + filename;
     console.log(file)
     res.download(file);
 })
@@ -138,7 +141,7 @@ app.use(testmail);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
@@ -148,7 +151,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
+    app.use(function (err, req, res, next) {
         if (process.env.ENV == "production") {
             res.redirect('/500');
         } else {
@@ -163,7 +166,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     if (process.env.ENV == "production") {
         res.redirect('/500');
     } else {
