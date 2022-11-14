@@ -99,6 +99,7 @@ const promocodes = require('./routes/promocodeRoute');
 const reasons = require('./routes/reasonRoute');
 const restaurantsType = require('./routes/restaurantsTypeRoute');
 const settings = require('./routes/settingsRoute');
+const addons = require('./routes/addonsRoute');
 
 app.use('/admin', adminRoute);
 app.use('/superadmin', superadminRoute);
@@ -111,6 +112,7 @@ app.use('/promocodes', promocodes);
 app.use('/reason', reasons);
 app.use('/restaurantsType', restaurantsType);
 app.use('/settings', settings);
+app.use('/addons', addons);
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
