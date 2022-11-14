@@ -69,7 +69,7 @@ module.exports = {
         const { id } = req.params;
 
         try {
-            const category = await category.destroy({
+            const category = await Category.destroy({
                 where: {
                     id: id
                 }
