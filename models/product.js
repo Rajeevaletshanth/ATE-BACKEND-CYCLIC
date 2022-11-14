@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const database = require('../db_connect');
 
 
-const Restaurant = database.define('restaurant', {
+const Product = database.define('product', {
 
         id:{
             type: Sequelize.INTEGER,
@@ -74,4 +74,4 @@ const Restaurant = database.define('restaurant', {
 
 // Admin.sync({ force: true })
 
-module.exports= Restaurant;
+module.exports= Product;
