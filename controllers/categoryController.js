@@ -51,7 +51,7 @@ module.exports = {
     getByid: async (req, res) => {
         const id = req.params.id
         try {
-            const category = await category.findAll({
+            const category = await Category.findAll({
                 where: {
                     id: id
                 }
