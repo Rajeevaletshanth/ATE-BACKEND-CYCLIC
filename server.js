@@ -102,6 +102,7 @@ const settings = require('./routes/settingsRoute');
 const addons = require('./routes/addonsRoute');
 const category = require('./routes/categoryRoute');
 const comboMenu = require('./routes/comboMenuRoute');
+const restaurant = require('./routes/restaurantRoute');
 
 app.use('/admin', adminRoute);
 app.use('/superadmin', superadminRoute);
@@ -117,6 +118,7 @@ app.use('/settings', settings);
 app.use('/addons', addons);
 app.use('/category', category);
 app.use('/combomenu', comboMenu);
+app.use('/restaurant', restaurant);
 
 
 // app.use(authenticateToken, uploadRoute);
