@@ -193,7 +193,7 @@ module.exports = {
                     id: id
                 }
             })
-            if (cuisines > 0)
+            if (settings > 0)
                 res.send({ "response": "success", "message": "Successfully deleted." })
             else
                 res.send({ "response": "error", "message": "Sorry, failed to delete!" })

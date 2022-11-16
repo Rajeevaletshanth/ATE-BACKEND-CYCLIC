@@ -7,13 +7,12 @@ module.exports = {
     create: async (req, res) => {
 
         const reason = req.body.reason;
-        const extra_note = req.body.extra_note;
 
         try{
 
             const newreason = new Reason({
-                reason: reason,
-                extra_note: extra_note
+                reason: reason
+
             })
             await newreason.save()
 
@@ -82,19 +81,18 @@ module.exports = {
         const  { id } = req.params;
 
         const reason = req.body.reason;
-        const extra_note = req.body.extra_note;
 
         try {
-            const reason = await Reason.update({
-                nreason: reason,
-                extra_note: extra_note
+            const newReason = await Reason.update({
+                reason: reason
+
             },
             {
                 where: {
                     id: id
                 }
             })
-            if(currency[0] > 0)
+            if(newReason[0] > 0)
                 res.send({"response": "success", "message" : "Successfully updated."});
             else
                 res.send({"response" : "error", "message" : "Sorry, failed to update!"});

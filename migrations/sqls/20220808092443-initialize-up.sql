@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS public.currency
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     code VARCHAR(10) NOT NULL,
-    status INTEGER NOT NULL,
+    status VARCHAR(10) NOT NULL,
     is_deleted BOOLEAN DEFAULT false,
     created_at TIMESTAMP,
     updated_at TIMESTAMP 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS public.delivery_people
     phone_no VARCHAR(15) NOT NULL,
     device_id VARCHAR(50),
     device_os VARCHAR(10),
-    delivery_status INTEGER NOT NULL,
+    delivery_status VARCHAR(10) NOT NULL,
     is_deleted BOOLEAN DEFAULT false,
     created_at TIMESTAMP,
     updated_at TIMESTAMP 
@@ -108,22 +108,6 @@ CREATE TABLE IF NOT EXISTS public.promocodes
     updated_at TIMESTAMP 
 );
 
-CREATE TABLE IF NOT EXISTS public.promocodes
-(
-    id SERIAL PRIMARY KEY,
-    promocodes VARCHAR(50) NOT NULL,
-    discount FLOAT NOT NULL,
-    usagelimit_percoupon INTEGER NOT NULL,
-    usagelimit_peruser INTEGER NOT NULL,
-    type VARCHAR(50) NOT NULL,
-    promocodetype VARCHAR(50) NOT NULL,
-    avaiable_from VARCHAR(50),
-    expired_date VARCHAR(50),
-    is_deleted BOOLEAN DEFAULT false,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP 
-);
-
 CREATE TABLE IF NOT EXISTS public.reason
 (
     id SERIAL PRIMARY KEY,
@@ -138,7 +122,7 @@ CREATE TABLE IF NOT EXISTS public.restaurants_type
 (
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    status INTEGER NOT NULL,
+    status VARCHAR(10) NOT NULL,
     is_deleted BOOLEAN DEFAULT false,
     created_at TIMESTAMP,
     updated_at TIMESTAMP 
@@ -289,84 +273,6 @@ CREATE TABLE IF NOT EXISTS public.qrcode
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     qr_avatar VARCHAR(100),
-    is_deleted BOOLEAN DEFAULT false,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP 
-);
-
-CREATE TABLE IF NOT EXISTS public.addons
-(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    product_id VARCHAR(50) NOT NULL,
-    price FLOAT NOT NULL,
-    addons_avatar VARCHAR(100),
-    is_deleted BOOLEAN DEFAULT false,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP 
-);
-
-CREATE TABLE IF NOT EXISTS public.category
-(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    restaurant_id INTEGER NOT NULL,
-    description VARCHAR(50),
-    category_avatar VARCHAR(100),
-    is_deleted BOOLEAN DEFAULT false,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP 
-);
-
-CREATE TABLE IF NOT EXISTS public.restaurant
-(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    restaurant_avatar VARCHAR(100),
-    is_deleted BOOLEAN DEFAULT false,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP 
-);
-
-CREATE TABLE IF NOT EXISTS public.product
-(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    category_id INTEGER NOT NULL,
-    restaurant_id INTEGER NOT NULL,
-    description VARCHAR(50),
-    food_type VARCHAR(50) NOT NULL,
-    is_availability BOOLEAN,
-    price FLOAT NOT NULL,
-    quantity INTEGER NOT NULL,
-    is_addons BOOLEAN,
-    offer INTEGER,
-    product_avatar VARCHAR(100),
-    is_deleted BOOLEAN DEFAULT false,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP 
-);
-
-CREATE TABLE IF NOT EXISTS public.combo_menu
-(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    description VARCHAR(50),
-    price FLOAT NOT NULL,
-    max_quantity INTEGER NOT NULL,
-    is_availability BOOLEAN,
-    menu_image VARCHAR(100),
-    is_deleted BOOLEAN DEFAULT false,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP 
-);
-
-CREATE TABLE IF NOT EXISTS public.qrcode
-(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    table_no BOOLEAN,
-    qr_image VARCHAR(50),
     is_deleted BOOLEAN DEFAULT false,
     created_at TIMESTAMP,
     updated_at TIMESTAMP 
