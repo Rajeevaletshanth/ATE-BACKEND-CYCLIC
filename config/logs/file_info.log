@@ -1213,3 +1213,23 @@
   message: 'kishanthuyan1996@gmail.com logged in...',
   timestamp: '2022-11-16T04:20:36.978Z'
 }
+{
+  level: 'error',
+  message: 'admin@ltwtech.it : Wrong Email/ Password combination!',
+  timestamp: '2022-11-16T04:47:06.073Z'
+}
+{
+  level: 'info',
+  message: 'admin@ltwtech.it logged in...',
+  timestamp: '2022-11-16T04:47:12.853Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-11-16T08:16:51.165Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-11-16T08:57:19.052Z'
+}

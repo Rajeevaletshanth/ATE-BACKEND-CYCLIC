@@ -314,3 +314,8 @@
   message: 'admin@ltwtech.it : Wrong Email/ Password combination!',
   timestamp: '2022-11-15T12:56:28.493Z'
 }
+{
+  level: 'error',
+  message: 'admin@ltwtech.it : Wrong Email/ Password combination!',
+  timestamp: '2022-11-16T04:47:06.076Z'
+}
