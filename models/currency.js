@@ -19,7 +19,7 @@ const Currency = database.define('currency', {
         },
 
         status:{
-            type: Sequelize.INTEGER,
+            type: Sequelize.STRING,
         },
 
         is_deleted:{

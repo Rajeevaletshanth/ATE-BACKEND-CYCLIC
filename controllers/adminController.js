@@ -95,7 +95,7 @@ module.exports = {
                                     level: 'error',
                                     message: `${email} : Wrong Email/ Password combination!`
                                 });
-                                res.send({"response": "error", "message" : "Wrong Email/ Password combination"});                                
+                                res.send({"response": "error", "message" : "Wrong Email/ Password combination", isLoggedIn:false });                                
                             }
                         })
                     }else{

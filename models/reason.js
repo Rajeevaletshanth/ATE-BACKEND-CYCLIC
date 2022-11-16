@@ -14,10 +14,6 @@ const Reason = database.define('reason', {
         type: Sequelize.STRING,
     },
 
-    extra_note: {
-        type: Sequelize.STRING,
-    },
-
     is_deleted: {
         type: Sequelize.BOOLEAN
     },

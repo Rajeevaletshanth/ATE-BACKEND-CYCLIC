@@ -52,7 +52,7 @@ const DeliveryPeople = database.define('delivery_people', {
         },
 
         delivery_status:{
-            type: Sequelize.INTEGER,
+            type: Sequelize.STRING,
         },
 
         is_deleted:{

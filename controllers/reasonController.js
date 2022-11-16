@@ -22,7 +22,7 @@ module.exports = {
                 res.send({"response" : "error", "message" : "Sorry, failed to save!"})
 
         } catch (error) {
-            res.send({"response": "error", "message" : "Undefined error occured!"});
+            res.send({"response": "error", "message" : "Undefined error occured!", error});
         }
     },
 
