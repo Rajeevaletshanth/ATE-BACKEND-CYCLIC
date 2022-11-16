@@ -77,7 +77,6 @@ module.exports = {
                     restaurant_id: id
                 }
             })
-            console.log(category);
             if (category.length > 0)
                 res.send({ "response": "success", category })
             else
@@ -85,7 +84,6 @@ module.exports = {
 
         }catch(error){
             res.send({ "response": "error", "message": "Undefined error occured!" });
-            console.log(error);
         }
     },
 

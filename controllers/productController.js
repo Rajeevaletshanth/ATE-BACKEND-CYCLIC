@@ -79,6 +79,24 @@ module.exports = {
         }
     },
 
+    //get product by category id
+    getProductByid: async (req, res) => {
+        const id = req.params.id
+        try{
+            const product = await Product.findAll({
+                where: {
+                    category_id: id
+                }
+            })
+            if (product.length > 0)
+                res.send({ "response": "success", product })
+            else
+                res.send({ "response": "error", "message": "product doesn't exist" })
+        }catch(error){
+            res.send({ "response": "error", "message": "Undefined error occured!" });
+        }
+    },
+
     delete: async (req, res) => {
         const { id } = req.params;
 
