@@ -65,6 +65,34 @@ module.exports = {
         }
     },
 
+
+    //get by category with restaurant id
+    getByCategory: async (req, res) => {
+        const id = req.params.id
+
+        try{
+
+            const category = await Category.findAll({
+                where: {
+                    restaurant_id: id
+                }
+            })
+            console.log(category);
+            if (category.length > 0)
+                res.send({ "response": "success", category })
+            else
+                res.send({ "response": "error", "message": "category doesn't exist" })
+
+        }catch(error){
+            res.send({ "response": "error", "message": "Undefined error occured!" });
+            console.log(error);
+        }
+    },
+
+
+
+
+
     delete: async (req, res) => {
         const { id } = req.params;
 

@@ -10,4 +10,6 @@ router.get('/:id', controller.getByid)
 router.delete('/delete/:id', controller.delete)
 router.put('/edit/:id', controller.edit)
 
+router.get('/restaurant/:id', controller.getByCategory);
+
 module.exports = router;
