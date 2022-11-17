@@ -1,6 +1,7 @@
 require('dotenv').config();
 const logger = require('../config/logger');
 const Product = require('../models/product');
+const ComboMenu = require('../models/comboMenu');
 
 module.exports = {
 
@@ -12,6 +13,7 @@ module.exports = {
         const restaurant_id = req.body.restaurant_id;
         const description = req.body.description;
         const food_type = req.body.food_type;
+        const combo_menu_id = req.body.combo_menu_id;
         const is_availability = req.body.is_availability;
         const price = req.body.price;
         const quantity = req.body.quantity;
@@ -27,6 +29,7 @@ module.exports = {
                 restaurant_id: restaurant_id,
                 description: description,
                 food_type: food_type,
+                combo_menu_id: combo_menu_id,
                 is_availability: is_availability,
                 price: price,
                 quantity: quantity,
@@ -82,20 +85,65 @@ module.exports = {
     //get product by category id
     getProductByid: async (req, res) => {
         const id = req.params.id
-        try{
+        try {
             const product = await Product.findAll({
                 where: {
                     category_id: id
                 }
             })
+
             if (product.length > 0)
                 res.send({ "response": "success", product })
             else
                 res.send({ "response": "error", "message": "product doesn't exist" })
-        }catch(error){
+
+        } catch (error) {
             res.send({ "response": "error", "message": "Undefined error occured!" });
         }
     },
+
+    //ComboMenu
+    getComboMenuPack: async (req, res) => {
+
+        const id = req.params.id
+
+        try {
+
+            const product = await Product.findAll({
+                where: {
+                    combo_menu_id: id
+                },
+            })
+
+            const combo = await ComboMenu.findAll({
+                where: {
+                    id: id
+                }
+            })
+
+            var a = 0;
+            var b = 0;
+            var price = 0;
+
+            for (var i = 0; i < product.length; i++) {
+                a += product[i].price;
+                b = combo[0].discount / 100;
+                price = a - (a * b);
+                console.log(b);
+            }
+
+
+
+            if (combo.length > 0)
+                res.send({ "response": "success", product, price })
+            else
+                res.send({ "response": "error", "message": "Combo Menu doesn't exist" })
+
+        } catch (error) {
+            res.send({ "response": "error", "message": "Undefined error occured!", });
+        }
+    },
+
 
     delete: async (req, res) => {
         const { id } = req.params;

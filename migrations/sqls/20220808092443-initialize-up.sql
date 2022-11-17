@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS public.currency
 CREATE TABLE IF NOT EXISTS public.delivery_people
 (
     id SERIAL PRIMARY KEY,
+    restaurant_id INTEGER NOT NULL,
     name VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL UNIQUE,
     address VARCHAR(50) NOT NULL,
@@ -217,7 +218,7 @@ CREATE TABLE IF NOT EXISTS public.category
 (
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    restaurant_id VARCHAR(50) NOT NULL,
+    restaurant_id INTEGER NOT NULL,
     description VARCHAR(50),
     category_avatar VARCHAR(100),
     is_deleted BOOLEAN DEFAULT false,
@@ -243,6 +244,7 @@ CREATE TABLE IF NOT EXISTS public.product
     restaurant_id INTEGER NOT NULL,
     description VARCHAR(50),
     food_type VARCHAR(50) NOT NULL,
+    combo_menu_id INTEGER,
     is_availability BOOLEAN,
     price FLOAT NOT NULL,
     quantity INTEGER NOT NULL,
@@ -259,7 +261,7 @@ CREATE TABLE IF NOT EXISTS public.combo_menu
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     description VARCHAR(50),
-    price FLOAT NOT NULL,
+    discount FLOAT NOT NULL,
     max_quantity INTEGER NOT NULL,
     is_availability BOOLEAN,
     menu_avatar VARCHAR(50),
@@ -273,6 +275,37 @@ CREATE TABLE IF NOT EXISTS public.qrcode
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     qr_avatar VARCHAR(100),
+    is_deleted BOOLEAN DEFAULT false,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP 
+);
+
+CREATE TABLE IF NOT EXISTS public.card
+(
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL,
+    product_name VARCHAR NOT NULL,
+    quantity INTEGER NOT NULL,
+    price FLOAT NOT NULL,
+    note VARCHAR(50),
+    card_draft BOOLEAN DEFAULT false,
+    is_deleted BOOLEAN DEFAULT false,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP 
+);
+
+CREATE TABLE IF NOT EXISTS public.promotion
+(
+    id SERIAL PRIMARY KEY,
+    promotion_name VARCHAR(50) NOT NULL,
+    product_id INTEGER NOT NULL,
+    product_name VARCHAR(50) NOT NULL,
+    discount FLOAT,
+    quantity INTEGER,
+    vaild_date VARCHAR(50) NOT NULL,
+    description VARCHAR(100),
+    promotion_avater VARCHAR(100),
     is_deleted BOOLEAN DEFAULT false,
     created_at TIMESTAMP,
     updated_at TIMESTAMP 

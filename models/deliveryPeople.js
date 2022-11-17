@@ -8,7 +8,11 @@ const DeliveryPeople = database.define('delivery_people', {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
-        },       
+        },
+        
+        restaurant_id:{
+            type: Sequelize.INTEGER,
+        },
 
         name:{
             type: Sequelize.STRING,

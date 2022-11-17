@@ -2,64 +2,44 @@ const Sequelize = require('sequelize');
 const database = require('../db_connect');
 
 
-const Product = database.define('product', {
+const Card = database.define('card', {
 
         id:{
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
-        },
-        
-        name:{
-            type: Sequelize.STRING,
-        },
+        },       
 
-        category_id:{
+        user_id:{
             type: Sequelize.INTEGER,
         },
 
-        restaurant_id:{
-            type: Sequelize.INTEGER,
+        product_id:{
+          type: Sequelize.INTEGER,
         },
 
-        description:{
+        product_name:{
             type: Sequelize.STRING,
-        },
-
-        food_type:{
-            type: Sequelize.STRING,
-        },
-
-        combo_menu_id:{
-            type: Sequelize.INTEGER,
-        },
-
-        is_availability:{
-            type: Sequelize.BOOLEAN,
-        },
-
-        price:{
-            type: Sequelize.FLOAT,
         },
 
         quantity:{
             type: Sequelize.INTEGER,
         },
 
-        is_addons:{
-            type: Sequelize.BOOLEAN,
+        price:{
+            type: Sequelize.FLOAT,
         },
 
-        offer:{
-            type: Sequelize.INTEGER,
-        },
-
-        product_avatar:{
+        note:{
             type: Sequelize.STRING,
         },
 
+        card_draft:{
+            type: Sequelize.BOOLEAN,
+        },
+
         is_deleted:{
-          type: Sequelize.BOOLEAN
+          type: Sequelize.BOOLEAN,
         },
 
         createdAt: {
@@ -78,4 +58,4 @@ const Product = database.define('product', {
 
 // Admin.sync({ force: true })
 
-module.exports= Product;
+module.exports= Card;

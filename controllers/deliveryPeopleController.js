@@ -6,6 +6,7 @@ module.exports = {
 
     create: async (req, res) => {
 
+        const restaurant_id = req.body.restaurant_id;
         const name = req.body.name;
         const email = req.body.email;
         const address = req.body.address;
@@ -21,6 +22,7 @@ module.exports = {
         try {
 
             const newDeliverProple = new DeliveryPeople({
+                restaurant_id: restaurant_id,
                 name: name,
                 email: email,
                 address: address,
@@ -96,6 +98,8 @@ module.exports = {
 
     edit : async(req, res) => {
         const  { id } = req.params;
+        
+        const restaurant_id = req.body.restaurant_id;
         const name = req.body.name;
         const email = req.body.email;
         const address = req.body.address;
@@ -108,9 +112,9 @@ module.exports = {
         const device_os = req.body.device_os;
         const delivery_status = req.body.delivery_status;
 
-
         try {
             const deliveryPeople = await DeliveryPeople.update({
+                restaurant_id: restaurant_id,
                 name: name,
                 email: email,
                 address: address,

@@ -105,6 +105,8 @@ const comboMenu = require('./routes/comboMenuRoute');
 const restaurant = require('./routes/restaurantRoute');
 const product = require('./routes/productRoute');
 const qrCode = require('./routes/qrCodeRoute');
+const card = require('./routes/cardRoute');
+const promotion = require('./routes/promotionRoute');
 
 app.use('/admin', adminRoute);
 app.use('/superadmin', superadminRoute);
@@ -123,7 +125,8 @@ app.use('/combomenu', comboMenu);
 app.use('/restaurant', restaurant);
 app.use('/product', product);
 app.use('/qrcode', qrCode);
-
+app.use('/card', card);
+app.use('/promotion', promotion);
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
