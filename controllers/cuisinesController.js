@@ -7,13 +7,13 @@ module.exports = {
     create: async (req, res) => {
 
         const name = req.body.name;
-        const image = req.body.image;
+        const cuisines_avatar = req.body.cuisines_avatar;
 
         try{
 
             const newCuisines = new Cuisines({
                 name: name,
-                image: image,
+                cuisines_avatar: cuisines_avatar,
             })
             await newCuisines.save()
 
@@ -80,12 +80,12 @@ module.exports = {
     edit : async(req, res) => {
         const  { id } = req.params;
         const name = req.body.name;
-        const image = req.body.image;
+        const cuisines_avatar = req.body.cuisines_avatar;
 
         try {
             const cuisines = await Cuisines.update({
                 name: name,
-                image: image
+                cuisines_avatar: cuisines_avatar
             },
             {
                 where: {
