@@ -60,7 +60,7 @@ module.exports = {
                     id: id
                 }
             })
-            if(currency.length > 0)
+            if(notice.length > 0)
                 res.send({"response": "success", notice})
             else
                 res.send({"response": "error", "message" : "Notice doesn't exist"})
@@ -116,7 +116,7 @@ module.exports = {
                     id: id
                 }
             })
-            if(currency[0] > 0)
+            if(notice[0] > 0)
                 res.send({"response": "success", "message" : "Successfully updated."})
             else
                 res.send({"response" : "error", "message" : "Sorry, failed to update!"})
