@@ -1233,3 +1233,8 @@
   message: 'kishanthuyan1996@gmail.com logged in...',
   timestamp: '2022-11-16T08:57:19.052Z'
 }
+{
+  level: 'info',
+  message: 'admin@ltwtech.it logged in...',
+  timestamp: '2022-11-23T06:46:01.414Z'
+}
