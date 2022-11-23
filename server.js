@@ -74,6 +74,29 @@ app.use(requestIp.mw())
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
+//socket.io
+const http = require("http");
+const { Server } = require("socket.io");
+
+const server = http.createServer(app);
+
+const io = new Server(server, {
+  cors: '*',
+});
+
+io.on("connection", (socket) => {
+    console.log(`User Connected: ${socket.id}`);
+  
+    socket.on("join_room", (data) => {
+      socket.join(data);
+    });
+  
+    socket.on("send_message", (data) => {
+        socket.to(data.room).emit("receive_message", data);
+    });
+});
+//End of socket.io
+
 
 //Welcome Route
 app.get('/validate', authenticateToken, (req, res) => {
@@ -107,8 +130,20 @@ const product = require('./routes/productRoute');
 const qrCode = require('./routes/qrCodeRoute');
 const card = require('./routes/cardRoute');
 const promotion = require('./routes/promotionRoute');
+const userRoute = require('./routes/userRoute');
+
+//Payment
+const paymentCardRoute = require('./routes/paymentCardRoute');
+const stripeProductRoute = require('./routes/stripeProductRoute');
+const paymentRoute = require('./routes/paymentRoute');
+
+app.use('/payment_card', paymentCardRoute);
+app.use('/stripe_product', stripeProductRoute);
+app.use('/payment', paymentRoute);
+//End of Payment
 
 app.use('/admin', adminRoute);
+app.use('/user', userRoute);
 app.use('/superadmin', superadminRoute);
 app.use('/cuisines', cuisinesRoute);
 app.use('/currency', currencyRoute);
