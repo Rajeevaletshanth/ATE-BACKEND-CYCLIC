@@ -1238,3 +1238,8 @@
   message: 'admin@ltwtech.it logged in...',
   timestamp: '2022-11-23T06:46:01.414Z'
 }
+{
+  level: 'info',
+  message: 'admin@ate.it logged in...',
+  timestamp: '2022-11-24T11:27:51.105Z'
+}

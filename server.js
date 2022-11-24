@@ -131,6 +131,7 @@ const qrCode = require('./routes/qrCodeRoute');
 const card = require('./routes/cardRoute');
 const promotion = require('./routes/promotionRoute');
 const userRoute = require('./routes/userRoute');
+const kitchenRoute = require('./routes/kitchenRoute');
 
 //Payment
 const paymentCardRoute = require('./routes/paymentCardRoute');
@@ -162,6 +163,7 @@ app.use('/product', product);
 app.use('/qrcode', qrCode);
 app.use('/card', card);
 app.use('/promotion', promotion);
+app.use('/kitchen', kitchenRoute);
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
