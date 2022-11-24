@@ -19,13 +19,13 @@ Content-Type: application/json
 
 ###
 #Detach Card
-POSt http://localhost:5005/payment_card/remove_card/6
+POSt http://localhost:5005/payment_card/remove_card/1
 Content-Type: application/json
 
 {
-    "card_id" : "cc-52-ckqiREkG7A"
+    "card_id" : "cc-50-RZMph9e9EB"
 }
 
 ###
 //Get all cards by id
-GET http://localhost:5005/payment_card/get_allcards/6
+GET http://localhost:5005/payment_card/get_allcards/1

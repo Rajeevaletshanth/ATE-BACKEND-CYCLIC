@@ -79,7 +79,7 @@ module.exports = {
             const checkCardExists = await Card.findAll({
                 where:{
                     admin_id: admin_id,
-                    last_four_digits: last_four_digits
+                    card_id: cardId
                 }
             })
             if(checkCardExists.length > 0){
