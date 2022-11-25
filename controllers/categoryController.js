@@ -35,13 +35,29 @@ module.exports = {
     },
 
     getAll: async (req, res) => {
-
         try {
             const category = await Category.findAll()
             if (category.length > 0) {
                 res.send({ "response": "success", category })
             } else {
                 res.send({ "response": "error", "message": "category doesn't exist" })
+            }
+        } catch (error) {
+            res.send({ "response": "error", "message": "Undefined error occured!" });
+        }
+    },
+
+    getAllNames: async (req, res) => {
+        try {
+            const category = await Category.findAll()
+            if (category.length > 0) {
+                let categoryNames = [];
+                category.map((item, key) => {
+                    categoryNames[key] = {id: item.id, name: item.name}
+                })
+                res.send({ "response": "success", category: categoryNames })
+            } else {
+                res.send({ "response": "error", "message": "Category doesn't exist" })
             }
         } catch (error) {
             res.send({ "response": "error", "message": "Undefined error occured!" });

@@ -6,6 +6,7 @@ const { adminAuthenticateToken } = require("../auth/authentication")
 
 router.post('/create', controller.create)
 router.get('/list', controller.getAll)
+router.get('/name_list', controller.getAllNames)
 router.get('/:id', controller.getByid)
 router.delete('/delete/:id', controller.delete)
 router.put('/edit/:id', controller.edit)
