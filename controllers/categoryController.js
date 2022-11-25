@@ -49,13 +49,9 @@ module.exports = {
 
     getAllNames: async (req, res) => {
         try {
-            const category = await Category.findAll()
+            const category = await Category.findAll({attributes: ['id', 'name']})
             if (category.length > 0) {
-                let categoryNames = [];
-                category.map((item, key) => {
-                    categoryNames[key] = {id: item.id, name: item.name}
-                })
-                res.send({ "response": "success", category: categoryNames })
+                res.send({ "response": "success", category })
             } else {
                 res.send({ "response": "error", "message": "Category doesn't exist" })
             }
