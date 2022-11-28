@@ -53,15 +53,28 @@ const createInvoice = async (products_det, customerId) => {
     }
 }
 
-const createPaymentIntent = async (amount, currency, customer_id, payment_method_id, receipt_email) => {
+const createPaymentIntent = async (amount, currency, customer_id, payment_method_id, receipt_email, shipping_dets) => {
     try {
-        const paymentIntent = await stripe.paymentIntents.create({
-            amount: amount * 100,
-            currency: currency,
-            customer: customer_id,
-            payment_method_types: ['card'],
-            receipt_email: receipt_email
-          });
+        const  paymentIntent = await stripe.paymentIntents.create({
+                amount: amount * 100,
+                currency: currency,
+                customer: customer_id,
+                shipping: {
+                    name: shipping_dets?.name,
+                    phone: shipping_dets?.phone,
+                    tracking_number: shipping_dets?.tracking_number,
+                    address:{
+                        city: shipping_dets?.address?.city,
+                        country: shipping_dets?.address?.country_code,
+                        line1: shipping_dets?.address?.line1,
+                        line2: shipping_dets?.address?.line2,
+                        postal_code: shipping_dets?.address?.postal_code,
+                        state: shipping_dets?.address?.state,
+                    }
+                },
+                payment_method_types: ['card'],
+                receipt_email: receipt_email
+        });    
 
         const confirmPayment = await stripe.paymentIntents.confirm(
             paymentIntent.id,
@@ -117,6 +130,7 @@ module.exports = {
         const card_id = req.body.card_id;
         const currency = req.body.currency;
         const receipt_email = req.body.receipt_email;
+        const shipping_dets = req.body.shipping_dets;
 
         try {
             await Card.findAll({
@@ -127,7 +141,7 @@ module.exports = {
             }).then(async(response) =>{
                 if(response.length > 0){
                     const customerId = await getPaymentCustomerId(admin_id);
-                    const paymentIntent = await createPaymentIntent(amount, currency, customerId, response[0].payment_method_id, receipt_email)
+                    const paymentIntent = await createPaymentIntent(amount, currency, customerId, response[0].payment_method_id, receipt_email, shipping_dets)
                     res.json({response:"success", message: "Payment successfull.", data: paymentIntent})
                 }else{
                     res.json({response:"error", message: "No card found!"})

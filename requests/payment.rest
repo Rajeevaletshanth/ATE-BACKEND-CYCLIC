@@ -16,11 +16,24 @@ POST http://localhost:5005/payment/direct_payment
 Content-Type: application/json
 
 {
-    "admin_id": "6",
+    "admin_id": "1",
     "amount": 20,
-    "card_id": "cc-54-OwMIEz58OP",
+    "card_id": "cc-50-RZMph9e9EB",
     "currency": "eur",
-    "receipt_email": "vjvfc2k16@gmail.com"
+    "receipt_email": "vjvfc2k16@gmail.com",
+    "shipping_dets" : {
+        "name" : "Alex",
+        "phone" : "0123456789",
+        "tracking_number" : "TR-123456",
+        "address" : {
+            "city" : "Milan",
+            "country_code" : "IT",
+            "line1" : "Test street",
+            "line2" : "",
+            "postal_code" : "20019",
+            "state" : "Milano"
+        }
+    }
 }
 
 ###
