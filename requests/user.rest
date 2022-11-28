@@ -32,17 +32,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiYXZhdGFyI
 
 ###
 //Edit admin
-PUT http://localhost:5005/user/edit/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiYXZhdGFyIjoiMTY2Nzc5MzI4ODEzMy02NjgtNjY4OTIwMl9hdmF0YXItcHJvZmlsZS1oZC1wbmctZG93bmxvYWQucG5nIiwidXNlcm5hbWUiOiJMVFcgVGVjaCIsImVtYWlsIjoidXNlcjFAbHR3dGVjaC5pdCIsImF1dGhvcml0eSI6IntcInJvbGVcIjpbXCJ1c2VyXCJdfSIsImlhdCI6MTY2OTAyNjIyNywiZXhwIjoxNjY5MDI5ODI3fQ.qlAQ7db6GlFIc_xG_-6MVCdX1dBCCZUQZWgb5H4hgoc
+PUT http://localhost:5005/user/edit/32
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiYXZhdGFyIjoiMTY2Nzc5MzI4ODEzMy02NjgtNjY4OTIwMl9hdmF0YXItcHJvZmlsZS1oZC1wbmctZG93bmxvYWQucG5nIiwidXNlcm5hbWUiOiJMVFcgVGVjaCIsImVtYWlsIjoidXNlcjFAbHR3dGVjaC5pdCIsImF1dGhvcml0eSI6IntcInJvbGVcIjpbXCJ1c2VyXCJdfSIsImlhdCI6MTY2OTYxODc1MywiZXhwIjoxNjY5NjIyMzUzfQ.SvLsHTuZ4HXzc_z4fBcncDm3muv9jz3yM3IM7y6utXU
 Content-Type: application/json
 
 {
-    "name" : "ALEX",
-    "address" : "123, Main Rd, Mannar",
-    "website" : "travelagent.com",
-    "phone_no" : "5678901235",
-    "vat_id" : "ASDFGHJKLP098",
-    "profile" : "1660632804460-LTWDentalCare-HomeLayout.png"
+    "username" : "ALEX",
+    "address" : [{"type" : "Home" , "address" : "123, Main Rd, Mannar"}],
+    "avatar" : "1667793288133-668-6689202_avatar-profile-hd-png-download.png",
+    "phone_no" : "5678901235"
 }
 
 ###
