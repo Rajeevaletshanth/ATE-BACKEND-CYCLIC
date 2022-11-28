@@ -149,6 +149,23 @@ module.exports = {
         }
     },
 
+    get_addresses: async (req, res) => {
+        const  { id } = req.params;
+        try {
+            await User.findAll(
+                {
+                    attributes: ['address'],
+                    where:{ 
+                        id: id
+                    }
+                }).then((response) => {
+                    res.json({response:"success", data: JSON.parse(response[0].address)})
+                })
+        } catch (error) {
+            res.json({response:"error", message: "undefined error occured", error: [error]})
+        }
+    },
+
     editProfile : async(req, res) => {
         const  { id } = req.params;
         const username = req.body.username;         
