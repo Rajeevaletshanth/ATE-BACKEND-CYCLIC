@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS public.order
     order_time time,
     delivery_fee FLOAT,
     total_amount FLOAT NOT NULL,
-    status INTEGER NOT NULL,
+    status BOOLEAN NOT NULL DEFAULT false,
     is_deleted BOOLEAN DEFAULT false,
     created_at TIMESTAMP,
     updated_at TIMESTAMP 
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS public.favourite
     user_id INTEGER NOT NULL,
     restaurant_id INTEGER NOT NULL,
     product_id INTEGER NOT NULL,
-    status INTEGER NOT NULL,
+    status BOOLEAN NOT NULL DEFAULT false,
     is_deleted BOOLEAN DEFAULT false,
     created_at TIMESTAMP,
     updated_at TIMESTAMP 
