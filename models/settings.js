@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const database = require('../db_connect');
 
 
-const Reason = database.define('reason', {
+const Settings = database.define('settings', {
 
     id: {
         type: Sequelize.INTEGER,
@@ -287,4 +287,4 @@ const Reason = database.define('reason', {
 
 // Admin.sync({ force: true })
 
-module.exports = Reason;
+module.exports = Settings;
