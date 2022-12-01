@@ -102,7 +102,7 @@ const Settings = database.define('settings', {
         type: Sequelize.STRING,
     },
 
-    productOrder: {
+    productorder: {
         type: Sequelize.STRING,
     },
 
@@ -265,7 +265,6 @@ const Settings = database.define('settings', {
     is_sociallogin: {
         type: Sequelize.STRING,
     },
-
 
     is_deleted: {
         type: Sequelize.BOOLEAN
