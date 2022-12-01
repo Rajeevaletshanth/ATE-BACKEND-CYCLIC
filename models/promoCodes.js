@@ -39,7 +39,7 @@ const PromoCodes = database.define('promocodes', {
     },
 
     expired_date: {
-        type: Sequelize.STRING,
+        type: Sequelize.DATE,
     },
 
     is_deleted: {
