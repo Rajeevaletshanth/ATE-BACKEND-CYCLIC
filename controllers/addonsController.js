@@ -7,16 +7,16 @@ module.exports = {
 
     create: async (req, res) => {
         
+        const restaurant_id = req.body.restaurant_id;
         const name = req.body.name;
-        const product_id = req.body.product_id;
         const price = req.body.price;
         const addons_avatar = req.body.addons_avatar;
 
         try{
 
             const newAddons = new Addons({
+                restaurant_id: restaurant_id,
                 name: name,
-                product_id: product_id,
                 price: price,
                 addons_avatar: addons_avatar
             })
@@ -86,15 +86,15 @@ module.exports = {
     edit : async(req, res) => {
         const  { id } = req.params;
 
+        const restaurant_id = req.body.restaurant_id;
         const name = req.body.name;
-        const product_id = req.body.product_id;
         const price = req.body.price;
         const addons_avatar = req.body.addons_avatar;
 
         try {
             const addons = await Addons.update({
+                restaurant_id: restaurant_id,
                 name: name,
-                product_id: product_id,
                 price: price,
                 addons_avatar: addons_avatar
             },

@@ -8,14 +8,14 @@ const Addons = database.define('addons', {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
-        },       
+        },
+        
+        restaurant_id:{
+            type: Sequelize.INTEGER,
+        },
 
         name:{
             type: Sequelize.STRING,
-        },
-
-        product_id:{
-          type: Sequelize.INTEGER,
         },
 
         price:{
