@@ -130,6 +130,18 @@ module.exports = {
         });
       },
 
+    getAll: async (req, res) => {
+        try {
+            const kitchen = await Kitchen.findAll()
+            if(kitchen.length > 0)
+                res.send({"response": "success", kitchen})
+            else
+                res.send({"response": "error", "message" : "No restaurant found"})
+        } catch(error) {
+            res.send({response: "error", message : "Undefined error occured!", error: [error]})
+        }
+    },
+
     getByid: async (req, res) => {
         const id = req.params.id
         try {

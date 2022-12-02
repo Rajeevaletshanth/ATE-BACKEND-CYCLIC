@@ -1,5 +1,5 @@
 #Attach Card
-POST http://localhost:5005/payment_card/add_card/1
+POST http://localhost:5005/payment_card/add_card/17
 Content-Type: application/json
 
 {
