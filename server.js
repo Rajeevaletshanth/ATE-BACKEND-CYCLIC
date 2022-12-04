@@ -134,6 +134,7 @@ const userRoute = require('./routes/userRoute');
 const kitchenRoute = require('./routes/kitchenRoute');
 const orders = require('./routes/orderRoute');
 const favourite = require('./routes/favouriteRoute');
+const addtocart = require('./routes/addtocartRoute');
 
 //Payment
 const paymentCardRoute = require('./routes/paymentCardRoute');
@@ -168,6 +169,7 @@ app.use('/promotion', promotion);
 app.use('/kitchen', kitchenRoute);
 app.use('/orders', orders);
 app.use('/favourite', favourite);
+app.use('/addtocart', addtocart);
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
