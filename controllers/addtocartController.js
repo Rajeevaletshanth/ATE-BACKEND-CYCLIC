@@ -10,6 +10,8 @@ module.exports = {
         const user_id = req.body.user_id;
         const restaurant_id = req.body.restaurant_id;
         const product_id = req.body.product_id;
+        const product_name = req.body.product_name;
+        const price = req.body.price;
         const addons = JSON.stringify(req.body.addons);
         const qty = req.body.qty;
         const status = req.body.status;
@@ -20,6 +22,8 @@ module.exports = {
                 user_id: user_id,
                 restaurant_id: restaurant_id,
                 product_id: product_id,
+                product_name: product_name,
+                price: price,
                 addons: addons,
                 qty: qty,
                 status: status
@@ -39,9 +43,13 @@ module.exports = {
     },
 
     getAll: async (req, res) => {
-
+        const id = req.params.id
         try{
-            const addtocart = await AddToCart.findAll()
+            const addtocart = await AddToCart.findAll({
+                where: {
+                    user_id: id
+                }
+            })
             if(addtocart.length > 0){
                 res.send({"response": "success", addtocart})
             }else{
@@ -57,7 +65,7 @@ module.exports = {
         try {
             const addtocart = await AddToCart.findAll({
                 where: {
-                    user_id: id
+                    id: id
                 }
             })
             if(addtocart.length > 0)
@@ -93,15 +101,18 @@ module.exports = {
         const user_id = req.body.user_id;
         const restaurant_id = req.body.restaurant_id;
         const product_id = req.body.product_id;
+        const product_name = req.body.product_name;
+        const price = req.body.price;
         const addons = JSON.stringify(req.body.addons);
         const qty = req.body.qty;
-        const status = req.body.status;
-
+        const status = req.body.status
         try {
             const addtocart = await AddToCart.update({
                 user_id: user_id,
                 restaurant_id: restaurant_id,
                 product_id: product_id,
+                product_name: product_name,
+                price: price,
                 addons: addons,
                 qty: qty,
                 status: status

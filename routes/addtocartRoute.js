@@ -5,7 +5,7 @@ const controller = require('../controllers/addtocartController');
 const {adminAuthenticateToken} = require("../auth/authentication")
 
 router.post('/create', controller.create)
-router.get('/list', controller.getAll)
+router.get('/list/:id', controller.getAll)
 router.get('/:id', controller.getByid)
 router.delete('/delete/:id', controller.delete)
 router.put('/edit/:id', controller.edit)

@@ -22,6 +22,14 @@ const AddToCart = database.define('addtocart', {
             type: Sequelize.INTEGER,
         },
 
+        product_name:{
+            type: Sequelize.STRING,
+        },
+
+        price:{
+            type: Sequelize.FLOAT,
+        },
+
         addons:{
             type: Sequelize.STRING,
         },
