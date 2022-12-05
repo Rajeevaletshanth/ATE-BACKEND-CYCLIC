@@ -72,9 +72,7 @@ module.exports = {
         const is_sociallogin = req.body.is_sociallogin;
 
         try {
-
             const newSettings = new Settings({
-
                 site: site,
                 logo: logo,
                 favicon: favicon,
@@ -148,7 +146,7 @@ module.exports = {
                 res.send({ "response": "error", "message": "Sorry, failed to save!" })
 
         } catch (error) {
-            res.send({ "response": "error", "message": "Undefined error occured!" });
+            res.send({ "response": "error", "message": "Undefined error occured!", error: [error] });
         }
     },
 

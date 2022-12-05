@@ -13,6 +13,7 @@ module.exports = {
         const max_quantity = req.body.max_quantity;
         const is_availability = req.body.is_availability;
         const menu_avatar = req.body.menu_avatar;
+        const restaurant_id = req.body.restaurant_id;
 
         try {
 
@@ -23,6 +24,7 @@ module.exports = {
                 max_quantity: max_quantity,
                 is_availability: is_availability,
                 menu_avatar: menu_avatar,
+                restaurant_id: restaurant_id
             })
             await newComboMenu.save();
 

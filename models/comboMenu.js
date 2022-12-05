@@ -34,6 +34,10 @@ const ComboMenu = database.define('combo_menu', {
         type: Sequelize.STRING,
     },
 
+    restaurant_id: {
+        type: Sequelize.STRING,
+    },
+
     is_deleted: {
         type: Sequelize.BOOLEAN
     },
