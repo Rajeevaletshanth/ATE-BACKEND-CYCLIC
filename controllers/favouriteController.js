@@ -49,7 +49,7 @@ module.exports = {
             const fav = await Favourite.findAll({
                 where:{
                     user_id: id,
-                    status: true
+                    // status: true
                 }
             })
             if(fav.length > 0){
