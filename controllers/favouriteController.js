@@ -1,7 +1,9 @@
 require('dotenv').config();
+const { Op } = require("sequelize");
 const logger = require('../config/logger');
 const Favourite = require('../models/favourite');
 const Product = require('../models/product')
+
 
 module.exports = {
 
@@ -48,12 +50,22 @@ module.exports = {
         try{
             const fav = await Favourite.findAll({
                 where:{
-                    user_id: id,
-                    // status: true
-                }
+                    user_id: id
+                },
+                attributes: ['product_id']
             })
             if(fav.length > 0){
-                res.send({"response": "success", fav})
+                const productArr = fav.map(({product_id: id}) => ({id}))
+                await Product.findAll({
+                    where:{
+                        [Op.or]: productArr
+                    }
+                }).then((resp) => {
+                    res.send({"response": "success", products: resp})
+                }).catch((err)=>{
+                    res.send({"response": "error", message:"No favourites."})
+                })
+                
             }else{
                 res.send({"response": "error", "message" : "No favourites"})
             }
