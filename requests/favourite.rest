@@ -1,0 +1,26 @@
+#Add to favourite
+POST http://localhost:5005/favourite/add_to_fav
+Content-Type: application/json
+
+{
+    "user_id" : 1,
+    "restaurant_id" : 6,
+    "product_id" : 14,
+    "status" : true
+}
+
+###
+#Get all favourites
+GET http://localhost:5005/favourite/get_all_fav/1
+
+###
+#Remove from favourite
+POST http://localhost:5005/favourite/remove/1
+Content-Type: application/json
+
+{
+    "user_id" : 1,
+    "restaurant_id" : 6,
+    "product_id" : 14,
+    "status" : true
+}

@@ -1,6 +1,7 @@
 require('dotenv').config();
 const logger = require('../config/logger');
 const Favourite = require('../models/favourite');
+const Product = require('../models/product')
 
 module.exports = {
 
@@ -12,19 +13,30 @@ module.exports = {
         const status = req.body.status;
 
         try{
-            const newFav = new Favourite({
-                user_id: user_id,
-                restaurant_id: restaurant_id,
-                product_id: product_id,
-                status: status
+            await Favourite.findAll({
+                where:{
+                    product_id:product_id
+                }
+            }).then(async(response) => {
+                if(response.length > 0){
+                    res.send({"response": "success", "message" : "Already added to favourite."})
+                }else{
+                    const newFav = new Favourite({
+                        user_id: user_id,
+                        restaurant_id: restaurant_id,
+                        product_id: product_id,
+                        status: status
+                    })
+                    await newFav.save();
+                    if(newFav){
+                        res.send({"response": "success", "message" : " Favourite add Successfully."})
+                    }else{
+                        res.send({"response" : "error", "message" : "Sorry, failed to save!"})
+                    }
+                }
+            }).catch((err)=> {
+                res.send({"response" : "error", "message" : "Sorry, failed to add favourite!"})
             })
-            await newFav.save();
-
-            if(newFav){
-                res.send({"response": "success", "message" : " Favourite add Successfully."})
-            }else{
-                res.send({"response" : "error", "message" : "Sorry, failed to save!"})
-            }
 
         }catch(error){
             res.send({"response": "error", "message" : "Undefined error occured! $"});
@@ -32,11 +44,12 @@ module.exports = {
     },
 
     getAll: async (req, res) => {
-        const { user_id } = req.params;
+        const { id } = req.params;
         try{
             const fav = await Favourite.findAll({
                 where:{
-                    user_id: user_id
+                    user_id: id,
+                    status: true
                 }
             })
             if(fav.length > 0){
@@ -57,7 +70,7 @@ module.exports = {
         try {
             await Favourite.destroy({
                 where: {
-                    id: id,
+                    user_id: id,
                     restaurant_id:restaurant_id,
                     product_id:product_id
                 }
