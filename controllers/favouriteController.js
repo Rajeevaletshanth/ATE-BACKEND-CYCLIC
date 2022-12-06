@@ -5,15 +5,13 @@ const Favourite = require('../models/favourite');
 module.exports = {
 
 
-    create: async (req, res) => {
-        
+    create: async (req, res) => {        
         const user_id = req.body.user_id;
         const restaurant_id = req.body.restaurant_id;
         const product_id = req.body.product_id;
         const status = req.body.status;
 
         try{
-
             const newFav = new Favourite({
                 user_id: user_id,
                 restaurant_id: restaurant_id,
@@ -31,20 +29,45 @@ module.exports = {
         }catch(error){
             res.send({"response": "error", "message" : "Undefined error occured! $"});
         }
-
     },
 
     getAll: async (req, res) => {
-
+        const { user_id } = req.params;
         try{
-            const fav = await Favourite.findAll()
+            const fav = await Favourite.findAll({
+                where:{
+                    user_id: user_id
+                }
+            })
             if(fav.length > 0){
                 res.send({"response": "success", fav})
             }else{
-                res.send({"response": "error", "message" : "Favourite doesn't exist"})
+                res.send({"response": "error", "message" : "No favourites"})
             }
         }catch(error) {
             res.send({"response": "error", "message" : "Undefined error occured!"});
+        }
+    },
+
+    remove: async (req,res) => {
+        const  { id } = req.params;
+        const restaurant_id = req.body.restaurant_id;
+        const product_id = req.body.product_id;
+
+        try {
+            await Favourite.destroy({
+                where: {
+                    id: id,
+                    restaurant_id:restaurant_id,
+                    product_id:product_id
+                }
+            }).then((response) => {
+                res.send({"response": "success", "message" : "Removed from favourite list."})
+            }).catch((err) => {
+                res.send({"response" : "error", "message" : "Sorry, failed to delete!"})
+            })
+        } catch(error) {
+            res.send({"response": "error", "message" : "Undefined error occured!"});                     
         }
     },
 

@@ -27,6 +27,7 @@ module.exports = {
         const avatar = req.body.avatar;
         const opening_time = req.body.opening_time;
         const closing_time = req.body.closing_time;
+        const delivery_schedule = JSON.stringify(req.body.delivery_schedule);
         const cuisines = JSON.stringify(req.body.cuisines);
         const delivery_type = req.body.delivery_type;
         const location = JSON.stringify(req.body.location);
@@ -53,6 +54,7 @@ module.exports = {
                                 avatar: avatar,
                                 opening_time: opening_time,
                                 closing_time: closing_time,
+                                delivery_schedule: delivery_schedule,
                                 cuisines: cuisines,
                                 delivery_type: delivery_type,
                                 location: location,
@@ -189,6 +191,7 @@ module.exports = {
         const avatar = req.body.avatar;
         const opening_time = req.body.opening_time;
         const closing_time = req.body.closing_time;
+        const delivery_schedule = JSON.stringify(req.body.delivery_schedule);
         const cuisines = JSON.stringify(req.body.cuisines);
         const delivery_type = req.body.delivery_type;
         const location = JSON.stringify(req.body.location);
@@ -207,6 +210,7 @@ module.exports = {
                 avatar: avatar,
                 opening_time: opening_time,
                 closing_time: closing_time,
+                delivery_schedule: delivery_schedule,
                 cuisines: cuisines,
                 delivery_type: delivery_type,
                 location: location,

@@ -73,6 +73,10 @@ const Kitchen = database.define('kitchen', {
             allowNull: false,
         },
 
+        delivery_schedule:{
+            type: Sequelize.STRING
+        },
+
         cuisines:{
             type: Sequelize.STRING
         },
