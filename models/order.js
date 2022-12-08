@@ -14,20 +14,9 @@ const Order = database.define('order', {
             type: Sequelize.INTEGER,
         },
 
-        restaurant_id:{
-          type: Sequelize.INTEGER,
-        },
-
-        product_id:{
-            type: Sequelize.INTEGER,
-        },
-
-        quantity:{
-            type: Sequelize.INTEGER,
-        },
-
-        price:{
-            type: Sequelize.FLOAT,
+        products:{
+            type: Sequelize.STRING,
+            allowNull: false
         },
 
         order_date:{
@@ -47,7 +36,7 @@ const Order = database.define('order', {
         },
 
         status:{
-            type: Sequelize.BOOLEAN,
+            type: Sequelize.STRING,
         },
 
         is_deleted:{
