@@ -324,3 +324,103 @@
   message: 'admin@ltwtech.it : Wrong Email/ Password combination!',
   timestamp: '2022-12-04T19:26:17.648Z'
 }
+{
+  level: 'error',
+  message: 'admin@gmail.com : encryption error!',
+  timestamp: '2022-12-06T03:46:21.050Z'
+}
+{
+  level: 'error',
+  message: 'admin@gmail.com : encryption error!',
+  timestamp: '2022-12-06T03:52:31.740Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:07:31.387Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:07:45.824Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:08:59.429Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:09:01.409Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:45:20.703Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:46:10.143Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:46:16.859Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:46:18.519Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:50:33.969Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:50:40.854Z'
+}
+{
+  level: 'error',
+  message: 'admin5@ate.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-06T08:04:20.434Z'
+}
+{
+  level: 'error',
+  message: 'admin5@ate.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-06T08:04:27.851Z'
+}
+{
+  level: 'error',
+  message: 'admin5@ate.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-06T08:04:35.854Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-06T08:53:49.086Z'
+}
+{
+  level: 'error',
+  message: 'admin@ltwtech.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-06T14:58:48.586Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-06T17:40:11.144Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-08T08:57:04.226Z'
+}
+{
+  level: 'error',
+  message: 'admin@ltwtech.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-08T13:38:19.859Z'
+}
