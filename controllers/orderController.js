@@ -1,6 +1,33 @@
 require('dotenv').config();
+const { Op } = require("sequelize");
 const logger = require('../config/logger');
 const Order = require('../models/order');
+const Product = require('../models/product')
+const Kitchen = require('../models/kitchen')
+
+const getProductDets = async(id) => {
+    await Product.findOne({
+        where:{
+            product_id: id
+        }
+    }).then((resp) => {
+        return resp   
+    }).catch((err)=>{
+        return []
+    })
+}
+
+const getKitchenDets = async(id) => {
+    await Kitchen.findOne({
+        where:{
+            product_id: id
+        }
+    }).then((resp) => {
+        return resp   
+    }).catch((err)=>{
+        return []
+    })
+}
 
 module.exports = {
 
@@ -63,35 +90,41 @@ module.exports = {
     getByid: async (req, res) => {
         const id = req.params.id
         try {
-            const order = await Order.findAll({
+
+            const order = await Order.findOne({
                 where: {
                     id: id
                 }
             })
-            if(order.length > 0)
-                res.send({"response": "success", order})
-            else
-                res.send({"response": "error", "message" : "order doesn't exist"})
+            if(order !== null){
+                // const productArr = order.map(({product_id: id}) => ({id}))
+                // const kitchenArr = order.map(({restaurant_id: id}) => ({id}))
+
+                const product_dets = getProductDets(order.product_id);
+                const kitchen_dets = getKitchenDets(order.restaurant_id);
+
+                res.send({"response": "success", data: {order_dets: order, product_dets:product_dets, kitchen_dets:kitchen_dets}})     
+            }else
+                res.send({"response": "error", "message" : "Order doesn't exist"})
         } catch(error) {
-            res.send({"response": "error", "message" : "Undefined error occured!"});
+            res.send({"response": "error", "message" : error.message});
         }
     },
 
-    //Get BY Order with USER ID
-    getByOrderid: async (req, res) => {
-        const id = req.params.id
+    getOrdersByUserId: async (req, res) => {
+        const user_id = req.params.user_id
         try {
             const order = await Order.findAll({
                 where: {
-                    id: user_id
+                    user_id: user_id
                 }
             })
             if(order.length > 0)
-                res.send({"response": "success", order})
+                res.send({"response": "success", orders: order})
             else
-                res.send({"response": "error", "message" : "order doesn't exist"})
+                res.send({"response": "error", "message" : "Order doesn't exist"})
         } catch(error) {
-            res.send({"response": "error", "message" : "Undefined error occured!"});
+            res.send({"response": "error", "message" : error.message});
         }
     },
 

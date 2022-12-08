@@ -63,6 +63,7 @@ module.exports = {
                             await newKitchen.save()
                             res.send({ "response": "success", kitchen: newKitchen });
                         } catch(error) { 
+                            console.log(error.message)
                             res.send({"response": "error", "message" : "This email is already registered. Please login!"});
                         }         
                     }

@@ -4,8 +4,8 @@ Content-Type: application/json
 
 {
     "user_id" : 1,
-    "restaurant_id" : 6,
-    "product_id" : 13,
+    "restaurant_id" : 13,
+    "product_id" : 6,
     "status" : true
 }
 
@@ -21,6 +21,6 @@ Content-Type: application/json
 {
     "user_id" : 1,
     "restaurant_id" : 6,
-    "product_id" : 14,
+    "product_id" : 13,
     "status" : true
 }
