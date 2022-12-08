@@ -46,8 +46,8 @@ const Product = database.define('product', {
             type: Sequelize.INTEGER,
         },
 
-        is_addons:{
-            type: Sequelize.BOOLEAN,
+        addons:{
+            type: Sequelize.STRING,
         },
 
         offer:{

@@ -17,12 +17,11 @@ module.exports = {
         const is_availability = req.body.is_availability;
         const price = req.body.price;
         const quantity = req.body.quantity;
-        const is_addons = req.body.is_addons;
+        const addons = JSON.stringify(req.body.addons);
         const offer = req.body.offer;
         const product_avatar = req.body.product_avatar;
 
         try {
-
             const newProduct = new Product({
                 name: name,
                 category_id: category_id,
@@ -33,7 +32,7 @@ module.exports = {
                 is_availability: is_availability,
                 price: price,
                 quantity: quantity,
-                is_addons: is_addons,
+                addons: addons,
                 offer: offer,
                 product_avatar: product_avatar
             })
@@ -174,7 +173,7 @@ module.exports = {
         const is_availability = req.body.is_availability;
         const price = req.body.price;
         const quantity = req.body.quantity;
-        const is_addons = req.body.is_addons;
+        const addons = JSON.stringify(req.body.addons);
         const offer = req.body.offer;
         const product_avatar = req.body.product_avatar;
 
@@ -188,7 +187,7 @@ module.exports = {
                 is_availability: is_availability,
                 price: price,
                 quantity: quantity,
-                is_addons: is_addons,
+                addons: addons,
                 offer: offer,
                 product_avatar: product_avatar
             },

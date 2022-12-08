@@ -6,7 +6,7 @@ Content-Type: application/json
     "name" : "AnyTimeEat",
     "authority" : {"role" : ["restaurant"]},
     "phone_no" : "0123456789",
-    "email" : "admin5@ate.it",
+    "email" : "admin6@ate.it",
     "password" : "1234",
     "description": "Time to eat.",
     "min_amount": "100 Eur",
@@ -103,3 +103,4 @@ Content-Type: application/json
     "currentPassword" : "12345",
     "newPassword" : "1234"
 }
+
