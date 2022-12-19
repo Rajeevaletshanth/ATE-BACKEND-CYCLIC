@@ -59,7 +59,7 @@ module.exports = {
             }
 
         }catch(error){
-            res.send({"response": "error", "message" : "Undefined error occured! $"});
+            res.send({"response": "error", "message" : error.message});
         }
 
     },
@@ -167,7 +167,7 @@ module.exports = {
             else
                 res.send({"response" : "error", "message" : "Sorry, failed to delete!"})
         } catch(error) {
-            res.send({"response": "error", "message" : "Undefined error occured!"});                     
+            res.send({"response": "error", "message" : error.message});                     
         }
     }
 
