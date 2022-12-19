@@ -1370,11 +1370,455 @@
 }
 {
   level: 'info',
+<<<<<<< HEAD
   message: 'admin@ltwtech.it logged in...',
   timestamp: '2022-12-17T16:36:20.491Z'
+=======
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T04:51:18.292Z'
+}
+{
+  level: 'info',
+  message: 'admin@ate.it logged in...',
+  timestamp: '2022-12-05T05:00:32.220Z'
+}
+{
+  level: 'info',
+  message: 'admin@ate.it logged in...',
+  timestamp: '2022-12-05T05:41:55.630Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T05:43:03.120Z'
+}
+{
+  level: 'info',
+  message: 'admin@ate.it logged in...',
+  timestamp: '2022-12-05T06:42:06.576Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T07:11:07.243Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-12-05T08:00:17.127Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T08:25:32.980Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T08:51:14.816Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T09:54:47.298Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T11:04:48.646Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T11:11:19.305Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T11:14:03.797Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T11:20:57.813Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T13:23:19.694Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T13:31:28.520Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T14:29:45.672Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T14:45:55.871Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T14:46:09.912Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T15:47:48.981Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-05T19:19:54.148Z'
+}
+{
+  level: 'error',
+  message: 'admin@gmail.com : encryption error!',
+  timestamp: '2022-12-06T03:46:21.050Z'
+}
+{
+  level: 'error',
+  message: 'admin@gmail.com : encryption error!',
+  timestamp: '2022-12-06T03:52:31.740Z'
+}
+{
+  level: 'info',
+  message: 'admin@ate.it logged in...',
+  timestamp: '2022-12-06T04:08:57.557Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-12-06T04:17:48.562Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:07:31.387Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:07:45.824Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:08:59.429Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:09:01.409Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-06T05:27:28.206Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:45:20.703Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:46:10.143Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:46:16.859Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:46:18.519Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:50:33.969Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : encryption error!',
+  timestamp: '2022-12-06T05:50:40.854Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-12-06T06:16:51.485Z'
+}
+{
+  level: 'info',
+  message: 'admin@ate.it logged in...',
+  timestamp: '2022-12-06T06:46:06.098Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-12-06T07:04:50.555Z'
+}
+{
+  level: 'info',
+  message: 'admin@ozone.it logged in...',
+  timestamp: '2022-12-06T07:22:54.694Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-06T07:49:13.294Z'
+}
+{
+  level: 'error',
+  message: 'admin5@ate.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-06T08:04:20.433Z'
+}
+{
+  level: 'error',
+  message: 'admin5@ate.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-06T08:04:27.850Z'
+}
+{
+  level: 'error',
+  message: 'admin5@ate.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-06T08:04:35.854Z'
+}
+{
+  level: 'info',
+  message: 'admin5@ate.it logged in...',
+  timestamp: '2022-12-06T08:04:40.440Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-12-06T08:05:25.219Z'
+}
+{
+  level: 'info',
+  message: 'admin5@ate.it logged in...',
+  timestamp: '2022-12-06T08:38:31.110Z'
+}
+{
+  level: 'info',
+  message: 'admin@ozone.it logged in...',
+  timestamp: '2022-12-06T08:52:25.172Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-06T08:53:49.085Z'
+}
+{
+  level: 'info',
+  message: 'admin@ate.it logged in...',
+  timestamp: '2022-12-06T08:53:57.049Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-06T08:55:57.535Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-06T09:54:25.655Z'
+}
+{
+  level: 'error',
+  message: 'admin@ltwtech.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-06T14:58:48.586Z'
 }
 {
   level: 'info',
   message: 'admin@ltwtech.it logged in...',
+  timestamp: '2022-12-06T14:58:53.433Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-12-06T15:51:05.076Z'
+}
+{
+  level: 'info',
+  message: 'admin5@ate.it logged in...',
+  timestamp: '2022-12-06T16:02:32.788Z'
+}
+{
+  level: 'info',
+  message: 'admin5@ate.it logged in...',
+  timestamp: '2022-12-06T17:37:08.049Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-06T17:40:11.144Z'
+}
+{
+  level: 'info',
+  message: 'admin@ate.it logged in...',
+  timestamp: '2022-12-06T17:40:22.845Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-12-06T17:42:31.032Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-07T05:21:11.817Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-07T05:21:57.781Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-07T05:30:49.553Z'
+}
+{
+  level: 'info',
+  message: 'mac@gmail.com logged in...',
+  timestamp: '2022-12-07T08:45:32.929Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-07T11:20:04.587Z'
+}
+{
+  level: 'info',
+  message: 'mac@gmail.com logged in...',
+  timestamp: '2022-12-07T16:01:40.355Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-12-07T17:09:37.982Z'
+}
+{
+  level: 'info',
+  message: 'admin5@ate.it logged in...',
+  timestamp: '2022-12-07T19:14:42.880Z'
+}
+{
+  level: 'info',
+  message: 'mac@gmail.com logged in...',
+  timestamp: '2022-12-08T05:00:54.132Z'
+}
+{
+  level: 'info',
+  message: 'mac@gmail.com logged in...',
+  timestamp: '2022-12-08T07:19:34.678Z'
+}
+{
+  level: 'info',
+  message: 'admin5@ate.it logged in...',
+  timestamp: '2022-12-08T07:22:08.030Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-12-08T08:36:39.248Z'
+}
+{
+  level: 'info',
+  message: 'mac@gmail.com logged in...',
+  timestamp: '2022-12-08T08:37:49.922Z'
+}
+{
+  level: 'info',
+  message: 'admin5@ate.it logged in...',
+  timestamp: '2022-12-08T08:39:47.199Z'
+}
+{
+  level: 'info',
+  message: 'admin5@ate.it logged in...',
+  timestamp: '2022-12-08T08:40:27.502Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-12-08T08:46:10.531Z'
+}
+{
+  level: 'info',
+  message: 'admin5@ate.it logged in...',
+  timestamp: '2022-12-08T08:46:32.459Z'
+}
+{
+  level: 'info',
+  message: 'admin5@ate.it logged in...',
+  timestamp: '2022-12-08T08:55:16.734Z'
+}
+{
+  level: 'info',
+  message: 'kishanthuyan1996@gmail.com logged in...',
+  timestamp: '2022-12-08T08:55:51.087Z'
+}
+{
+  level: 'error',
+  message: 'admin@ate.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-08T08:57:04.225Z'
+}
+{
+  level: 'info',
+  message: 'admin@ate.it logged in...',
+  timestamp: '2022-12-08T08:57:10.806Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-08T09:33:46.375Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-08T09:41:27.736Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-08T12:02:33.711Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-08T13:03:09.473Z'
+}
+{
+  level: 'error',
+  message: 'admin@ltwtech.it : Wrong Email/ Password combination!',
+  timestamp: '2022-12-08T13:38:19.859Z'
+>>>>>>> 343f515e49bdc89bf9405b678944efe7068dacdc
+}
+{
+  level: 'info',
+  message: 'admin@ltwtech.it logged in...',
+<<<<<<< HEAD
   timestamp: '2022-12-17T16:38:03.589Z'
+=======
+  timestamp: '2022-12-08T13:38:23.344Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-08T13:53:53.863Z'
+}
+{
+  level: 'info',
+  message: 'user1@ltwtech.it logged in...',
+  timestamp: '2022-12-08T14:14:33.346Z'
+>>>>>>> 343f515e49bdc89bf9405b678944efe7068dacdc
 }

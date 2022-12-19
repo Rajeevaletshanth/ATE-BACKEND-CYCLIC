@@ -14,6 +14,7 @@ module.exports = {
         const is_availability = req.body.is_availability;
         const menu_avatar = req.body.menu_avatar;
         const restaurant_id = req.body.restaurant_id;
+        const discount = req.body.discount;
 
         try {
 
@@ -24,7 +25,8 @@ module.exports = {
                 max_quantity: max_quantity,
                 is_availability: is_availability,
                 menu_avatar: menu_avatar,
-                restaurant_id: restaurant_id
+                restaurant_id: restaurant_id,
+                discount: discount
             })
             await newComboMenu.save();
 
@@ -35,7 +37,8 @@ module.exports = {
             }
 
         } catch (error) {
-            res.send({ "response": "error", "message": "Undefined error occured! $" });
+            // console.log(error)
+            res.send({ "response": "error", "message": "Undefined error occured!" });
         }
 
     },
