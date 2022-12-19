@@ -233,6 +233,8 @@ module.exports = {
         }
     },
 
+    forgot_password_otp : async(req, res) => {},
+
     change_password: async (req, res) => {
         const { id } = req.params;
         const currentPassword = req.body.currentPassword;

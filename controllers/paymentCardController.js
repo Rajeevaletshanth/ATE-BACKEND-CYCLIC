@@ -182,7 +182,7 @@ module.exports = {
                 })
             }
         } catch (error) {
-            res.json({ response: "error", message: "Sorry card not found!", error: [error] })
+            res.json({ response: "error", message: "Sorry card not found!", error: error.message })
         }
     },
 
