@@ -7,7 +7,7 @@ Content-Type: application/json
     "address" : "Milan, Italy",
     "authority" : {"role" : ["superadmin", "admin", "user"]},
     "phone_no" : "0123456789",
-    "email" : "admin@ltwtech.it",
+    "email" : "admin5@ltwtech.it",
     "password" : "1234",
     "avatar" : "/img/avatars/thumb-1.jpg"
 }
@@ -67,7 +67,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:5005/admin/reset_password/17/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZqdmZjMmsxNkBnbWFpbC5jb20iLCJpZCI6MTcsImlhdCI6MTY2NzM3ODYyMCwiZXhwIjoxNjY3Mzc4NjgwfQ.16tBQdQu6yhLWBwYslPEoW6cVGkfCO0cz_sCMBoInsI
+POST http://localhost:5005/admin/reset_password/3/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZqdmZjMmsxNkBnbWFpbC5jb20iLCJpZCI6MywiaWF0IjoxNjcxMjk1MTE5LCJleHAiOjE2NzEyOTYwMTl9.v2elLrobRD-Ou0c_JCyhbB867-fKvp8fys4al-mzMes
 Content-Type: application/json
 
 {

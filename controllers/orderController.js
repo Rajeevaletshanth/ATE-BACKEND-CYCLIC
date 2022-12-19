@@ -135,7 +135,7 @@ module.exports = {
     },
 
     getOrdersByUserId: async (req, res) => {
-        const user_id = req.params.user_id
+        const {user_id} = req.params
         try {
             const order = await Order.findAll({
                 where: {

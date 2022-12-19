@@ -192,7 +192,7 @@ module.exports = {
                     id: admin[0].id
                 }
                 const token = jwt.sign(payload, secret, {expiresIn: '15m'});
-                const link = `${process.env.CLIENT_URL}/reset_password/${admin[0].id}/${token}`;
+                const link = `${process.env.CLIENT_URL}/admin/reset_password/${admin[0].id}/${token}`;
 
                 let mailOptions = {
                     from: `LTW Tech <${process.env.MAILER_USER}>`, 

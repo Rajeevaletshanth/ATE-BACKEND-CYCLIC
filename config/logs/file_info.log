@@ -1370,6 +1370,10 @@
 }
 {
   level: 'info',
+<<<<<<< HEAD
+  message: 'admin@ltwtech.it logged in...',
+  timestamp: '2022-12-17T16:36:20.491Z'
+=======
   message: 'user1@ltwtech.it logged in...',
   timestamp: '2022-12-05T04:51:18.292Z'
 }
@@ -1797,10 +1801,14 @@
   level: 'error',
   message: 'admin@ltwtech.it : Wrong Email/ Password combination!',
   timestamp: '2022-12-08T13:38:19.859Z'
+>>>>>>> 343f515e49bdc89bf9405b678944efe7068dacdc
 }
 {
   level: 'info',
   message: 'admin@ltwtech.it logged in...',
+<<<<<<< HEAD
+  timestamp: '2022-12-17T16:38:03.589Z'
+=======
   timestamp: '2022-12-08T13:38:23.344Z'
 }
 {
@@ -1812,4 +1820,5 @@
   level: 'info',
   message: 'user1@ltwtech.it logged in...',
   timestamp: '2022-12-08T14:14:33.346Z'
+>>>>>>> 343f515e49bdc89bf9405b678944efe7068dacdc
 }
