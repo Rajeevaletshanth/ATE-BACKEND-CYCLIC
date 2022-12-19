@@ -13,5 +13,7 @@ router.put('/edit/:id', controller.edit)
 router.get('/product/:id', controller.getProductByid)
 router.get('/combo/:id', controller.getComboMenuPack)
 
+router.get('/kitchen/:id', controller.getProductByKitchen)
+
 
 module.exports = router;

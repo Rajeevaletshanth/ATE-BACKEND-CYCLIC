@@ -8,7 +8,7 @@ const {kitchenAuthenticateToken} = require("../auth/kitchen_authentication")
 
 router.post('/register', controller.register)
 router.post('/login', controller.login)
-router.get('/:id', kitchenAuthenticateToken, controller.getByid)
+router.get('/:id', controller.getByid)
 router.get('/list/all_kitchen', controller.getAll)
 router.post('/get_admin', adminAuthenticateToken, controller.getByEmail)
 router.put('/edit/:id', kitchenAuthenticateToken, controller.editProfile)

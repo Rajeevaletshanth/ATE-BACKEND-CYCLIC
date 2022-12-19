@@ -101,6 +101,26 @@ module.exports = {
         }
     },
 
+    getProductByKitchen: async (req, res) => {
+        const id = req.params.id
+        try {
+            const product = await Product.findAll({
+                where: {
+                    restaurant_id: id
+                }
+            })
+
+            if (product.length > 0)
+                res.send({ "response": "success", product })
+            else
+                res.send({ "response": "error", "message": "product doesn't exist" })
+
+        } catch (error) {
+            res.send({ "response": "error", "message": "Undefined error occured!" });
+        }
+    },
+
+
     //ComboMenu
     getComboMenuPack: async (req, res) => {
 
