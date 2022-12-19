@@ -4,6 +4,7 @@ const logger = require('../config/logger');
 const Order = require('../models/order');
 const Product = require('../models/product');
 const Addons = require('../models/addons');
+const { response } = require('express');
 
 const getProducts = async(productArr) => {
     try {
@@ -132,6 +133,27 @@ module.exports = {
         } catch(error) {
             res.send({"response": "error", "message" : error.message});
         }
+    },
+
+    getStatusByid: async (req, res) => {
+        const { id } = req.params;
+
+        try {
+            await Order.findOne({
+                where: {
+                    id: id
+                },
+                attributes:['status']
+            }).then((response) => {
+                if(response)
+                    res.json({response: "success", status: response.status})
+                else
+                    res.json({response: "empty", status: "undefined"})
+            })
+        } catch (error) {
+            res.send({"response": "error", "message" : error.message});
+        }
+        
     },
 
     getOrdersByUserId: async (req, res) => {
