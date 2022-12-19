@@ -1368,3 +1368,13 @@
   message: 'user1@ltwtech.it logged in...',
   timestamp: '2022-12-05T04:49:10.749Z'
 }
+{
+  level: 'info',
+  message: 'admin@ltwtech.it logged in...',
+  timestamp: '2022-12-17T16:36:20.491Z'
+}
+{
+  level: 'info',
+  message: 'admin@ltwtech.it logged in...',
+  timestamp: '2022-12-17T16:38:03.589Z'
+}
