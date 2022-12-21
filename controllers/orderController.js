@@ -6,6 +6,8 @@ const Product = require('../models/product');
 const Addons = require('../models/addons');
 const { response } = require('express');
 
+
+
 module.exports = {
     create: async (req, res) => {
         
@@ -122,9 +124,9 @@ module.exports = {
                 },
                 attributes:['status']
             }).then((response) => {
-                if(response)
-                    res.json({response: "success", status: response.status})
-                else
+                if(response){
+                    res.json({response: "success", status: response.status, order_id: id})
+                }else
                     res.json({response: "empty", status: "undefined"})
             })
         } catch (error) {

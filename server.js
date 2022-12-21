@@ -19,6 +19,43 @@ const { authenticateToken, adminAuthenticateToken } = require("./auth/authentica
 
 require('dotenv').config()
 
+//Socket io
+const http = require("http");
+const server = http.createServer(app);
+const socketIO = require("socket.io");
+const io = socketIO(server, {
+    transports:['polling'],
+    cors: '*'
+})
+
+io.on('connection', (socket) => {
+    // console.log(`${socket.id} user is connected`);
+  
+    // socket.on('message', (message) => {
+    //   console.log(`message from ${socket.id} : ${message}`);
+    // })
+  
+    // socket.on('disconnect', () => {
+    //   console.log(`socket ${socket.id} disconnected`);
+    // })
+    
+    // console.log(`User Connected: ${socket.id}`);
+  
+    socket.on("join_room", (data) => {
+      socket.join(data);
+    });
+  
+    socket.on("send_message", (data) => {
+        socket.to(data.room).emit("receive_message", data);
+    });
+
+    //Realtime order status
+    socket.on("update_order_status", (data) => {
+        socket.to(data.room).emit("get_order_status", data);
+    });
+})
+//end of socket io
+
 
 
 app.use(cors());
@@ -73,30 +110,6 @@ app.use(requestIp.mw())
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
-//socket.io
-const http = require("http");
-const { Server } = require("socket.io");
-
-const server = http.createServer(app);
-
-const io = new Server(server, {
-  cors: '*',
-});
-
-io.on("connection", (socket) => {
-    console.log(`User Connected: ${socket.id}`);
-  
-    socket.on("join_room", (data) => {
-      socket.join(data);
-    });
-  
-    socket.on("send_message", (data) => {
-        socket.to(data.room).emit("receive_message", data);
-    });
-});
-//End of socket.io
-
 
 //Welcome Route
 app.get('/validate', authenticateToken, (req, res) => {
@@ -233,6 +246,7 @@ app.use(function (err, req, res, next) {
 });
 
 
-app.listen(process.env.PORT, () => console.log(`Real Estate Tokenization engine on live on port ${process.env.PORT}!`))
+server.listen(process.env.PORT, () => console.log(`Real Estate Tokenization engine on live on port ${process.env.PORT}!`))
 
 module.exports = app;
+
