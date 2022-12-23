@@ -14,6 +14,10 @@ const Order = database.define('order', {
             type: Sequelize.INTEGER,
         },
 
+        restaurant_id:{
+            type: Sequelize.INTEGER,
+        },
+
         products:{
             type: Sequelize.STRING,
             allowNull: false
