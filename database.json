@@ -2,8 +2,9 @@
   "dev": {
     "driver": "pg",
     "user": "postgres",
-    "password": "05RIS6g56kt0XHcz3Y7T", 
-    "host": "ate.c50ok2neld7q.us-east-1.rds.amazonaws.com",
-    "database": "postgres"
+    "password": "OYJ0CWP3ngmRcRNjKdwV", 
+    "host": "containers-us-west-138.railway.app",
+    "database": "railway",
+    "port": "7570"
   }
 }
