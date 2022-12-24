@@ -246,7 +246,7 @@ app.use(function (err, req, res, next) {
 });
 
 
-server.listen(process.env.PORT || 5005, () => console.log(`Real Estate Tokenization engine on live on port ${process.env.PORT || 5005}!`))
+server.listen(5005, () => console.log(`Real Estate Tokenization engine on live on port ${5005}!`))
 
 module.exports = app;
 
