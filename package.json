@@ -5,7 +5,7 @@
   "main": "server.js",
   "engines": {
     "node": "14.x"
-  }
+  },
   "scripts": {
     "server": "nodemon server.js",
     "migrate": "db-migrate up initialize",
