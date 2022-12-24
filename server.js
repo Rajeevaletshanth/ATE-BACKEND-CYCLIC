@@ -20,40 +20,40 @@ const { authenticateToken, adminAuthenticateToken } = require("./auth/authentica
 require('dotenv').config()
 
 //Socket io
-const http = require("http");
-const server = http.createServer(app);
-const socketIO = require("socket.io");
-const io = socketIO(server, {
-    transports:['polling'],
-    cors: '*'
-})
+// const http = require("http");
+// const server = http.createServer(app);
+// const socketIO = require("socket.io");
+// const io = socketIO(server, {
+//     transports:['polling'],
+//     cors: '*'
+// })
 
-io.on('connection', (socket) => {
-    // console.log(`${socket.id} user is connected`);
+// io.on('connection', (socket) => {
+//     // console.log(`${socket.id} user is connected`);
   
-    // socket.on('message', (message) => {
-    //   console.log(`message from ${socket.id} : ${message}`);
-    // })
+//     // socket.on('message', (message) => {
+//     //   console.log(`message from ${socket.id} : ${message}`);
+//     // })
   
-    // socket.on('disconnect', () => {
-    //   console.log(`socket ${socket.id} disconnected`);
-    // })
+//     // socket.on('disconnect', () => {
+//     //   console.log(`socket ${socket.id} disconnected`);
+//     // })
     
-    // console.log(`User Connected: ${socket.id}`);
+//     // console.log(`User Connected: ${socket.id}`);
   
-    socket.on("join_room", (data) => {
-      socket.join(data);
-    });
+//     socket.on("join_room", (data) => {
+//       socket.join(data);
+//     });
   
-    socket.on("send_message", (data) => {
-        socket.to(data.room).emit("receive_message", data);
-    });
+//     socket.on("send_message", (data) => {
+//         socket.to(data.room).emit("receive_message", data);
+//     });
 
-    //Realtime order status
-    socket.on("update_order_status", (data) => {
-        socket.to(data.room).emit("get_order_status", data);
-    });
-})
+//     //Realtime order status
+//     socket.on("update_order_status", (data) => {
+//         socket.to(data.room).emit("get_order_status", data);
+//     });
+// })
 //end of socket io
 
 
