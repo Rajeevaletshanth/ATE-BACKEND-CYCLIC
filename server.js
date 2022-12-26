@@ -148,6 +148,8 @@ const kitchenRoute = require('./routes/kitchenRoute');
 const orders = require('./routes/orderRoute');
 const favourite = require('./routes/favouriteRoute');
 const addtocart = require('./routes/addtocartRoute');
+const topBrands = require('./routes/topBrandsRoute');
+const topOffers = require('./routes/topOfferRoute');
 
 //Payment
 const paymentCardRoute = require('./routes/paymentCardRoute');
@@ -183,6 +185,9 @@ app.use('/kitchen', kitchenRoute);
 app.use('/orders', orders);
 app.use('/favourite', favourite);
 app.use('/addtocart', addtocart);
+app.use('/top_brands', topBrands);
+app.use('/top_offers', topOffers);
+
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
