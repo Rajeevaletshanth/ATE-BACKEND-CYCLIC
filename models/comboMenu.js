@@ -18,6 +18,10 @@ const ComboMenu = database.define('combo_menu', {
         type: Sequelize.STRING,
     },
 
+    price: {
+        type: Sequelize.FLOAT,
+    },
+
     discount: {
         type: Sequelize.FLOAT,
     },
