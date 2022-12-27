@@ -150,6 +150,7 @@ const favourite = require('./routes/favouriteRoute');
 const addtocart = require('./routes/addtocartRoute');
 const topBrands = require('./routes/topBrandsRoute');
 const topOffers = require('./routes/topOfferRoute');
+const table = require('./routes/tableRoute');
 
 //Payment
 const paymentCardRoute = require('./routes/paymentCardRoute');
@@ -187,7 +188,7 @@ app.use('/favourite', favourite);
 app.use('/addtocart', addtocart);
 app.use('/top_brands', topBrands);
 app.use('/top_offers', topOffers);
-
+app.use('/table', table);
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
