@@ -2,6 +2,8 @@ require('dotenv').config();
 const logger = require('../config/logger');
 const Table = require('../models/table');
 
+const QRCode = require("qrcode");
+
 module.exports = {
 
     create: async (req, res) => {
@@ -10,18 +12,27 @@ module.exports = {
         const table_type = req.body.table_type;
         const seat_count = req.body.seat_count;
 
+        const gen_qr = {restaurant_id: restaurant_id, table_no: table_no}
+
         try{
+            let new_qr = "";
+            QRCode.toDataURL(gen_qr,  (err, code) => {
+                if(!err){
+                    new_qr = code
+                }
+            })
 
             const newTable = new Table({
                 restaurant_id: restaurant_id,
                 table_no: table_no,
                 table_type: table_type,
-                seat_count: seat_count
+                seat_count: seat_count,
+                qr_code: new_qr
             })
             await newTable.save()
 
             if(newTable)
-                res.send({response: "success", message : "Table added Successfully."})
+                res.send({response: "success", message : "Table added Successfully.", qr_code: new_qr})
             else
                 res.send({response : "error", message : "Sorry, failed to add table!"})
 

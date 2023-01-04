@@ -28,6 +28,10 @@ const Table = database.define('table', {
         allowNull: false
     },
 
+    qr_code: {
+        type: Sequelize.STRING
+    },
+
     is_booked: {
         type: Sequelize.BOOLEAN
     },
