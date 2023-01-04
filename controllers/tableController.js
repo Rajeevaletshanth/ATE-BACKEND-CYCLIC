@@ -6,7 +6,7 @@ const QRCode = require("qrcode");
 
 const generateQr = (data) => {
     return new Promise((resolve, reject) => {
-        QRCode.toDataURL(JSON.stringify(data),  (err, code) => {
+        QRCode.toDataURL(JSON.stringify(data), { width: 300 } ,  (err, code) => {
             if(err){
                 reject(err)              
             }else{
