@@ -2,9 +2,9 @@
   "dev": {
     "driver": "pg",
     "user": "postgres",
-    "password": "OYJ0CWP3ngmRcRNjKdwV", 
-    "host": "containers-us-west-138.railway.app",
+    "password": "b7UKzn0bogYQwJiZFPQV", 
+    "host": "containers-us-west-37.railway.app",
     "database": "railway",
-    "port": "7570"
+    "port": "7449"
   }
 }
