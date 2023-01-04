@@ -151,6 +151,7 @@ const addtocart = require('./routes/addtocartRoute');
 const topBrands = require('./routes/topBrandsRoute');
 const topOffers = require('./routes/topOfferRoute');
 const table = require('./routes/tableRoute');
+const tableReservation = require('./routes/tableReservationRoute');
 
 //Payment
 const paymentCardRoute = require('./routes/paymentCardRoute');
@@ -189,6 +190,7 @@ app.use('/addtocart', addtocart);
 app.use('/top_brands', topBrands);
 app.use('/top_offers', topOffers);
 app.use('/table', table);
+app.use('/table_reservation', tableReservation);
 
 // app.use(authenticateToken, uploadRoute);
 app.use(uploadRoute);
