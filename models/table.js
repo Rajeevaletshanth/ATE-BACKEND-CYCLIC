@@ -32,10 +32,6 @@ const Table = database.define('table', {
         type: Sequelize.STRING
     },
 
-    is_booked: {
-        type: Sequelize.BOOLEAN
-    },
-
     is_deleted: {
         type: Sequelize.BOOLEAN
     },

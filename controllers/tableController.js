@@ -4,6 +4,18 @@ const Table = require('../models/table');
 
 const QRCode = require("qrcode");
 
+const generateQr = (data) => {
+    return new Promise((resolve, reject) => {
+        QRCode.toDataURL(JSON.stringify(data),  (err, code) => {
+            if(err){
+                reject(err)              
+            }else{
+                resolve(code)
+            }
+        })
+    }) 
+}
+
 module.exports = {
 
     create: async (req, res) => {
@@ -12,15 +24,10 @@ module.exports = {
         const table_type = req.body.table_type;
         const seat_count = req.body.seat_count;
 
-        const gen_qr = {restaurant_id: restaurant_id, table_no: table_no}
+        const gen_qr = {ri: restaurant_id, tn: table_no}
 
         try{
-            let new_qr = "";
-            QRCode.toDataURL(gen_qr,  (err, code) => {
-                if(!err){
-                    new_qr = code
-                }
-            })
+            let new_qr = await generateQr(gen_qr);
 
             const newTable = new Table({
                 restaurant_id: restaurant_id,
@@ -31,11 +38,10 @@ module.exports = {
             })
             await newTable.save()
 
-            if(newTable)
+            if(newTable){
                 res.send({response: "success", message : "Table added Successfully.", qr_code: new_qr})
-            else
+            }else
                 res.send({response : "error", message : "Sorry, failed to add table!"})
-
         } catch (error) {
             res.send({response: "error", message : error.message });
         }
@@ -43,13 +49,11 @@ module.exports = {
 
     edit : async(req, res) => {
         const  { id } = req.params;
-        const table_no = req.body.table_no;
         const table_type = req.body.table_type;
         const seat_count = req.body.seat_count;
 
         try {
             const newTable = await Table.update({
-                table_no: table_no,
                 table_type: table_type,
                 seat_count: seat_count
             },
@@ -122,8 +126,5 @@ module.exports = {
         } catch(error) {
             res.send({response: "error", message : error.message});                     
         }
-    },
-    
-
-    
+    }, 
 }
