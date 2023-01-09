@@ -35,7 +35,7 @@ const DeliveryPeople = database.define('delivery_people', {
             type: Sequelize.FLOAT,
         },
 
-        image:{
+        deliver_avatar:{
             type: Sequelize.STRING,
         },
 

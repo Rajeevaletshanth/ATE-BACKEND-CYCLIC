@@ -12,7 +12,7 @@ module.exports = {
         const address = req.body.address;
         const latitude = req.body.latitude;
         const longtitude = req.body.longtitude;
-        const image = req.body.image;
+        const deliver_avatar = req.body.deliver_avatar;
         const country_code = req.body.country_code;
         const phone_no  = req.body.phone_no;
         const device_id = req.body.device_id;
@@ -28,7 +28,7 @@ module.exports = {
                 address: address,
                 latitude: latitude,
                 longtitude: longtitude,
-                image: image,
+                deliver_avatar: deliver_avatar,
                 country_code: country_code,
                 phone_no: phone_no,
                 device_id: device_id,
