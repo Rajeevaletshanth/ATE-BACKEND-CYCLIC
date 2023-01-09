@@ -43,7 +43,7 @@ module.exports = {
                 res.send({ "response": "error", "message": "Sorry, failed to save!" })
 
         } catch (error) {
-            res.send({ "response": "error", "message": "Undefined error occured!" });
+            res.send({ "response": "error", "message": error.message });
         }
     },
 
@@ -56,7 +56,7 @@ module.exports = {
                 res.send({"response": "error", "message" : "delivery People doesn't exist"})
             }
         }catch(error) {
-            res.send({"response": "error", "message" : "Undefined error occured!"});
+            res.send({"response": "error", "message" : error.message });
         }
     },
 
@@ -73,7 +73,7 @@ module.exports = {
             else
                 res.send({"response": "error", "message" : "delivery People doesn't exist"})
         } catch(error) {
-            res.send({"response": "error", "message" : "Undefined error occured!"});
+            res.send({"response": "error", "message" : error.message});
         }
     },
 
@@ -92,7 +92,7 @@ module.exports = {
             else
                 res.send({"response" : "error", "message" : "Sorry, failed to delete!"})
         } catch(error) {
-            res.send({"response": "error", "message" : "Undefined error occured!"});                     
+            res.send({"response": "error", "message" : error.message});                     
         }
     },
 
