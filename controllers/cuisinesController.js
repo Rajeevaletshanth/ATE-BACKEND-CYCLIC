@@ -7,13 +7,13 @@ module.exports = {
     create: async (req, res) => {
 
         const name = req.body.name;
-        const cuisines_avatar = req.body.cuisines_avatar;
+        const image = req.body.cuisines_avatar;
 
         try{
 
             const newCuisines = new Cuisines({
                 name: name,
-                cuisines_avatar: cuisines_avatar,
+                image: image,
             })
             await newCuisines.save()
 

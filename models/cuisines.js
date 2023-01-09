@@ -14,7 +14,7 @@ const Cuisines = database.define('cuisines', {
             type: Sequelize.STRING,
         },
 
-        cuisines_avatar:{
+        image:{
           type: Sequelize.STRING
         },
 
